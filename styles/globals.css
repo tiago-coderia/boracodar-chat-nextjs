@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.container {
+  grid-template-rows: max-content 1fr max-content;
+}
+
+input {
+  flex: 1;
+  outline: none;
+  color: var(--lastview);
+  font-size: 1.4rem;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+form:focus-within {
+  outline: 0.1px solid white;
+}
+
+.user-status::before {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  display: block;
+  background: #00b37e;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  animation: blinking 1s ease-in-out infinite;
+}
+
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
